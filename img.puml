@@ -1,0 +1,16 @@
+
+
+### 퀴즈가 자동으로 채점 될 때
+
+```plantuml
+@startuml
+autonumber
+모바일 --> 서버: 퀴즈 완료 버튼을 누른다.
+note right
+GET api/v1/contents/my-lecture/to-do-list/{user_lecture_key}/quizzes/{quiz_key}/results?quiz_history_popup=1
+end note
+
+서버 --> 모바일 : 퀴즈 결과를 반환한다.
+
+@enduml
+```
